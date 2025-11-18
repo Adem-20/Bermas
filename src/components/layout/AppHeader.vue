@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import bermasLogo from "../../assets/header/bermasLogo.png";
+import bermasLogo from "../../assets/header/BermasLogo.png";
 const menuItems = ref([
   { id: 1, name: "Ana Sayfa", path: "/" },
   { id: 2, name: "Kahve", path: "/coffe" },
