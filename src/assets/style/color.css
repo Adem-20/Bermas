@@ -1,0 +1,34 @@
+:root {
+  /* Primary - Espresso Brown */
+  --primary: #3e2723;
+  --primary-dark: #1b0000;
+  --primary-light: #6a4f4b;
+
+  /* Secondary - Coffee Bean */
+  --secondary: #5d4037;
+  --secondary-dark: #3e2723;
+  --secondary-light: #8d6e63;
+
+  /* Accent - Caramel/Latte */
+  --accent: #d4a574;
+  --accent-dark: #a67c52;
+  --accent-light: #e8c9a0;
+
+  /* Background & Surface */
+  --background: #fafaf8;
+  --surface: #ffffff;
+  --text-primary: #2c1810;
+  --text-secondary: #6d5e52;
+
+  /* Status Colors */
+  --success: #66bb6a;
+  --warning: #ffa726;
+  --error: #ef5350;
+  --info: #8d6e63;
+
+  /* Extra Coffee Tones */
+  --cream: #f5f5dc;
+  --mocha: #7b4b3a;
+  --cappuccino: #c9a88b;
+  --dark-roast: #231709;
+}

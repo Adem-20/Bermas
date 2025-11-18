@@ -1,0 +1,151 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Roboto:wght@300;400;500;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Heading Fonts - Elegant & Stylish */
+  --font-heading: 'Cinzel', serif;
+  --font-heading-alt: 'Lora', serif;
+
+  /* Body Fonts - Clean & Modern */
+  --font-body: 'Raleway', sans-serif;
+  --font-body-alt: 'Roboto', sans-serif;
+
+  /* Section Specific Fonts */
+  --font-header: 'Josefin Sans', sans-serif;    /* Header/Navbar için - Modern & Clean */
+  --font-hero: 'Oswald', sans-serif;            /* Hero bölümü için - Bold & Impact */
+  --font-hero-text: 'Raleway', sans-serif;      /* Hero alt metinleri için - Elegant */
+  --font-title: 'Cinzel', serif;                /* Özel başlıklar için - Luxury */
+  --font-card: 'Merriweather', serif;           /* Card'lar için - Readable & Classic */
+  --font-button: 'Josefin Sans', sans-serif;    /* Button'lar için - Modern & Strong */
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+
+/* Base Typography */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+}
+
+/* Utility Classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-heading-alt {
+  font-family: var(--font-heading-alt);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-body-alt {
+  font-family: var(--font-body-alt);
+}
+
+/* Section Specific Classes */
+.font-header,
+header,
+nav {
+  font-family: var(--font-header);
+}
+
+.font-hero,
+.hero-title {
+  font-family: var(--font-hero);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.font-hero-text,
+.hero-description,
+.hero p {
+  font-family: var(--font-hero-text);
+}
+
+.font-title {
+  font-family: var(--font-title);
+}
+
+.font-card {
+  font-family: var(--font-card);
+}
+
+.font-button,
+button,
+.btn {
+  font-family: var(--font-button);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+}
