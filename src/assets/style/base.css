@@ -1772,8 +1772,8 @@ body {
   padding: 40px;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(245, 230, 211, 0.6)
+    rgba(255, 255, 255, 1.2),
+    rgba(245, 230, 211, 1.5)
   );
   backdrop-filter: blur(10px);
   border-radius: 30px;

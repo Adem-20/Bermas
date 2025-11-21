@@ -1,84 +1,62 @@
 const trendyolBaseUrl =
   "https://www.trendyol.com/magaza/kahf-coffee-m-1128809?channelId=1&sst=0&sk=1";
 
+import limonluCheesecake from "@/assets/cakeSection/cheesecake/limonluCheesecake.jpg";
+import frambuazCheesecake from "@/assets/cakeSection/cheesecake/frambuazCheesecake.jpg";
+import lotusCheesecake from "@/assets/cakeSection/cheesecake/lotusCheesecake.jpg";
+import sanSebastianCheesecake from "@/assets/cakeSection/cheesecake/sanSebastianCheesecake.jpg";
+
 export const cakeCategories = {
   cheesecake: {
     name: "Cheesecake Çeşitleri",
     items: {
       limonluCheesecake: {
-        name: "Cheesecake Limonlu",
+        name: "Limonlu Cheesecake",
         description:
-          "Sunum Adımları mı yoksa grid sistem mi?",
+          "Kremsi dokusu ve ferah limon aromasıyla rafine bir cheesecake.",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: limonluCheesecake,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
       },
-      cappuccino: {
-        name: "Cappuccino",
+      frambuazCheesecake: {
+        name: "Frambuaz Cheesecake",
         description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
+          "Kremsi dokusu ve yoğun frambuaz aromasıyla rafine bir cheesecake",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: frambuazCheesecake,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
       },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
+      lotusCheesecake: {
+        name: "Lotus Cheesecake",
+        description:
+          "Kremsi dokusu ve karamelize Lotus aromasıyla rafine bir cheesecake.",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: lotusCheesecake,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
       },
-      americano: {
-        name: "Americano",
+      sanSebastianCheesecake: {
+        name: "San Sebastian Cheesecake",
         description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
+          "Kremsi dokusu ve hafif karamelize yüzeyiyle rafine bir cheesecake.",
         netWeight: "500g",
         sliceWeight: "Amerika",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: sanSebastianCheesecake,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
