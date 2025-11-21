@@ -98,7 +98,8 @@ export const cakeCategories = {
       },
       devils: {
         name: "Devils",
-        description: "Kremsi dokusu ve yoğun kakao aromasıyla rafine bir lezzet",
+        description:
+          "Kremsi dokusu ve yoğun kakao aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta Kavurma",
@@ -106,26 +107,6 @@ export const cakeCategories = {
         numberOfBoxes: 10,
         image: devils,
         trendyolLink: trendyolBaseUrl,
-
-      },
-      americano: {
-        name: "Americano",
-        description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
-        netWeight: "500g",
-        sliceWeight: "Amerika",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
