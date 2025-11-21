@@ -12,6 +12,46 @@ import fistikRuyasi from "@/assets/cakeSection/ruyaPastalar/fistikRuyasi.jpg";
 import karaOrmanPasta from "@/assets/cakeSection/ruyaPastalar/karaOrmanPasta.jpg";
 import devils from "@/assets/cakeSection/ruyaPastalar/devils.jpg";
 
+/*=========================== Meyveli Pastalar========================= */
+import tropikalMeyveli from "@/assets/cakeSection/meyveliPastalar/tropikalMeyveli.png";
+import cocostarPasta from "@/assets/cakeSection/meyveliPastalar/cocostarPasta.jpg";
+import yabanMersinli from "@/assets/cakeSection/meyveliPastalar/yabanMersinli.jpg";
+import visneliKurabiyeli from "@/assets/cakeSection/meyveliPastalar/visneliKurabiyeli.jpg";
+
+/*=========================== Marlenka Çeşitleri========================= */
+import balliCevizliMarlenka from "@/assets/cakeSection/marlenka/balliCevizliMarlenka.png";
+import balliAntepliMarlenka from "@/assets/cakeSection/marlenka/balliAntepliMarlenka.jpg";
+
+/*=========================== İncir Tahinli ========================= */
+import incirCevizli from "@/assets/cakeSection/incir-tahinli/incirCevizli.jpg";
+import balliTahinli from "@/assets/cakeSection/incir-tahinli/balliTahinli.png";
+
+/*=========================== Mono Pastalar ========================= */
+import latteMonoPasta from "@/assets/cakeSection/monoPastalar/latteMonoPasta.jpg";
+import tiramisuMono from "@/assets/cakeSection/monoPastalar/monotiramisu.jpg";
+import bellaVistaBeyaz from "@/assets/cakeSection/monoPastalar/bellaVistaBeyaz.jpg";
+import bellaVistaSiyah from "@/assets/cakeSection/monoPastalar/bellaVistaSiyah.jpg";
+import monoProSiyah from "@/assets/cakeSection/monoPastalar/monoProSiyah.jpg";
+import monoSnickerPasta from "@/assets/cakeSection/monoPastalar/monoSnickerPasta.jpg";
+import sufleYariPismis from "@/assets/cakeSection/monoPastalar/sufleYariPismis.jpg";
+import monoFrambuazliCheesecake from "@/assets/cakeSection/monoPastalar/monoFrambuazliCheesecake.jpg";
+
+/*=========================== kek/Meyveli Kekler ========================= */
+import beksKek from "@/assets/cakeSection/kek-meyveliKekler/beksKek.jpg";
+
+/*=========================== Cedric Serisi (Özel Ürünler) ========================= */
+import cedricFistikli from "@/assets/cakeSection/cedricSeries/cedricFistikli.jpg";
+
+/*=========================== Mozaik&Ozel Pastalar ========================= */
+import mozaikPasta from "@/assets/cakeSection/mozaikVeOzelPastalar/mozaikPasta.png";
+
+/*=========================== Cup Pastalar ========================= */
+import kediDiliTiramisuCup from "@/assets/cakeSection/cupPastalar/kediDiliTiramisuCup.jpg";
+import tropikalMeyveliCup from "@/assets/cakeSection/cupPastalar/tropikalMeyveliCup.jpg";
+import cilekliCikolataliCup from "@/assets/cakeSection/cupPastalar/cilekliCikolataliCup.jpg";
+import lotusCup from "@/assets/cakeSection/cupPastalar/lotusCup.jpg";
+import antepFistikliDevilsCup from "@/assets/cakeSection/cupPastalar/antepFistikliDevilsCup.jpg";
+
 export const cakeCategories = {
   /*=========================== CheeseCake========================= */
   cheesecake: {
@@ -110,30 +150,25 @@ export const cakeCategories = {
       },
     },
   },
-  esprcwecesso: {
-    name: "Espresso Bazlı",
+
+  /*=========================== Meyveli Pastalar========================= */
+  meyveliPastalar: {
+    name: "Meyveli Pastalar",
     items: {
-      espresso: {
-        name: "Espresso",
+      tropikalMeyveliPasta: {
+        name: "Tropikal Meyveli Pasta",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Kremsi dokusu ve ferah tropikal meyve aromasıyla rafine bir lezzet.",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: tropikalMeyveli,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
       },
-      cappuccino: {
-        name: "Cappuccino",
+      cocostarPasta: {
+        name: "Cocostar Pasta",
         description:
           "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
         netWeight: "500g",
@@ -141,652 +176,343 @@ export const cakeCategories = {
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: cocostarPasta,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
       },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
+      visneliKurabiyeli: {
+        name: "Vişneli Kurabiyeli Pasta",
+        description:
+          "Kremsi dokusu ve yoğun vişne-kurabiye aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: visneliKurabiyeli,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
       },
-      americano: {
-        name: "Americano",
+      yabanMersinli: {
+        name: "Yaban Mersinli Pasta",
         description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
+          "Kremsi dokusu ve doğal yaban mersini aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Amerika",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: yabanMersinli,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
-  cwe: {
-    name: "Espresso Bazlı",
+
+  /*=========================== Marlenka Çeşitleri========================= */
+  marlenkaCesitleri: {
+    name: "Marlenka Çeşitleri",
     items: {
-      espresso: {
-        name: "Espresso",
+      balliCevizliMarlenka: {
+        name: "Ballı Cevizli Marlenka",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Kremsi dokusu ve doğal bal–ceviz aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: balliCevizliMarlenka,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
       },
-      cappuccino: {
-        name: "Cappuccino",
+      balliAntepliMarlenka: {
+        name: "Ballı Antep Fıstıklı Marlenka",
         description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
+          "Kremsi dokusu ve doğal bal–fıstık aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: balliAntepliMarlenka,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
-      },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
-        netWeight: "500g",
-        sliceWeight: "İtalya",
-        sliceCount: "Orta Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
-      },
-      americano: {
-        name: "Americano",
-        description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
-        netWeight: "500g",
-        sliceWeight: "Amerika",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
-  esprwcecesso: {
-    name: "Espresso Bazlı",
+
+  /*=========================== incir/tahinli Pasta========================= */
+  incirTahinliPastalar: {
+    name: "İncir&Tahinli Pastalar",
     items: {
-      espresso: {
-        name: "Espresso",
+      incirCevizli: {
+        name: "İncir Cevizli Pasta",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Kremsi dokusu ve doğal incir–ceviz aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: incirCevizli,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
       },
-      cappuccino: {
-        name: "Cappuccino",
+      balliTahinli: {
+        name: "Ballı Tahinli Pasta",
         description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
+          "Kremsi dokusu ve dengeli bal–tahin aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: balliTahinli,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
-      },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
-        netWeight: "500g",
-        sliceWeight: "İtalya",
-        sliceCount: "Orta Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
-      },
-      americano: {
-        name: "Americano",
-        description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
-        netWeight: "500g",
-        sliceWeight: "Amerika",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
-  esprecwesso: {
-    name: "Espresso Bazlı",
+
+  /*=========================== Mono Pastalar ========================= */
+  monoPastalar: {
+    name: "Mono Pastalar",
     items: {
-      espresso: {
-        name: "Espresso",
+      latteMonoPasta: {
+        name: "Latte Mono Pasta",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Kremsi dokusu ve yumuşak latte aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: latteMonoPasta,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
       },
-      cappuccino: {
-        name: "Cappuccino",
+      tiramisuMono: {
+        name: "Mono Tiramisu Pasta",
         description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
+          "Kremsi dokusu ve dengeli kahve–mascarpone aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: tiramisuMono,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
       },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
+      bellaVistaBeyaz: {
+        name: "Bella Vista (Beyaz)",
+        description:
+          "Kremsi dokusu ve hafif beyaz çikolata aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: bellaVistaBeyaz,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
       },
-      americano: {
-        name: "Americano",
+      bellaVistaSiyah: {
+        name: "Bella Vista Siyah",
         description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
+          "Kremsi dokusu ve yoğun bitter çikolata aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Amerika",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: bellaVistaSiyah,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
+      },
+      monoProSiyah: {
+        name: "Mono Profiterol Siyah",
+        description:
+          "Kremsi dokusu ve yoğun çikolata aromasıyla rafine bir lezzet.",
+        netWeight: "500g",
+        sliceWeight: "Amerika",
+        sliceCount: "Orta-Koyu Kavurma",
+        shelfLife: "İnce",
+        numberOfBoxes: 10,
+        image: monoProSiyah,
+        trendyolLink: trendyolBaseUrl,
+      },
+      monoSnickerPasta: {
+        name: "Mono Snickers Pasta",
+        description:
+          "Kremsi dokusu ve karamel–fıstık aromasıyla rafine bir lezzet",
+        netWeight: "500g",
+        sliceWeight: "Amerika",
+        sliceCount: "Orta-Koyu Kavurma",
+        shelfLife: "İnce",
+        numberOfBoxes: 10,
+        image: monoSnickerPasta,
+        trendyolLink: trendyolBaseUrl,
+      },
+      sufleYariPismis: {
+        name: "Sufle – Yarı Pişmiş",
+        description:
+          "Akışkan dokusu ve yoğun kakao aromasıyla rafine bir lezzet",
+        netWeight: "500g",
+        sliceWeight: "Amerika",
+        sliceCount: "Orta-Koyu Kavurma",
+        shelfLife: "İnce",
+        numberOfBoxes: 10,
+        image: sufleYariPismis,
+        trendyolLink: trendyolBaseUrl,
+      },
+      monoFrambuazliCheesecake: {
+        name: "Mono Frambuazlı Pasta",
+        description:
+          "Kremsi dokusu ve canlı frambuaz aromasıyla rafine bir lezzet",
+        netWeight: "500g",
+        sliceWeight: "Amerika",
+        sliceCount: "Orta-Koyu Kavurma",
+        shelfLife: "İnce",
+        numberOfBoxes: 10,
+        image: monoFrambuazliCheesecake,
+        trendyolLink: trendyolBaseUrl,
       },
     },
   },
-  esprecwecsso: {
-    name: "Espresso Bazlı",
+
+  /*=========================== Kek/Meyveli Kekler ========================= */
+  kekMeyveliKekler: {
+    name: "Kek&Meyveli Kekler",
     items: {
-      espresso: {
-        name: "Espresso",
+      bekskekMeyveli: {
+        name: "Beks Kek Meyveli",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Yumuşak dokusu ve doğal meyve aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: beksKek,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
-      },
-      cappuccino: {
-        name: "Cappuccino",
-        description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
-        netWeight: "500g",
-        sliceWeight: "İtalya",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
-      },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
-        netWeight: "500g",
-        sliceWeight: "İtalya",
-        sliceCount: "Orta Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
-      },
-      americano: {
-        name: "Americano",
-        description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
-        netWeight: "500g",
-        sliceWeight: "Amerika",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
-  esprcwecesso: {
-    name: "Espresso Bazlı",
+
+  /*=========================== Cedric Serisi (Özel Ürünler) ========================= */
+  cedricSerisi: {
+    name: "Cedric Serisi (Özel Ürünler)",
     items: {
-      espresso: {
-        name: "Espresso",
+      cedricFistikli: {
+        name: "Cedric Fıstıklı",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Kremsi dokusu ve yoğun Antep fıstığı aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: cedricFistikli,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
       },
-      cappuccino: {
-        name: "Cappuccino",
+      cedricKahve: {
+        name: "Cedric Kahve",
         description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
+          "Kremsi dokusu ve dengeli kahve aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: "",
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
       },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
+      cedricLimon: {
+        name: "Cedric Limon",
+        description:
+          "Kremsi dokusu ve ferah limon aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: "",
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
-      },
-      americano: {
-        name: "Americano",
-        description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
-        netWeight: "500g",
-        sliceWeight: "Amerika",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
-  fsedf: {
-    name: "Espresso Bazlı",
+
+  /*=========================== Mozaik&Ozel Pastalar ========================= */
+  mozaikOzelPastalar: {
+    name: "Mozaik&Özel Pastalar",
     items: {
-      espresso: {
-        name: "Espresso",
+      mozaikPasta: {
+        name: "Mozaik Pasta",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Yoğun çikolata dokusu ve bisküvi kırıntılarıyla rafine bir lezzet.",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: mozaikPasta,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
-      },
-      cappuccino: {
-        name: "Cappuccino",
-        description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
-        netWeight: "500g",
-        sliceWeight: "İtalya",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
-      },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
-        netWeight: "500g",
-        sliceWeight: "İtalya",
-        sliceCount: "Orta Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
-      },
-      americano: {
-        name: "Americano",
-        description:
-          "Espresso ve sıcak su ile hazırlanan, yumuşak ama güçlü kahve",
-        netWeight: "500g",
-        sliceWeight: "Amerika",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "İnce",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Double espresso shot hazırlanır",
-          "Büyük fincana alınır",
-          "90-96°C sıcak su eklenir (1:2 oranında)",
-          "Hafifçe karıştırılır",
-          "Sıcak olarak servis edilir",
-        ],
       },
     },
   },
-  traditional: {
-    name: "Geleneksel Yöntemler",
+  /*=========================== Cup Pastalar ========================= */
+  cupPastalar: {
+    name: "Cup Çeşitleri (Küçük Porsiyonlar)",
     items: {
-      turkish: {
-        name: "Türk Kahvesi",
-        description: "Geleneksel Türk usulü, yoğun ve köpüklü kahve",
+      kediDiliTiramisuCup: {
+        name: "Kedi Dili Tiramisu Cup",
+        description:
+          "Kremsi dokusu ve dengeli kahve–mascarpone aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Brezilya Santos",
         sliceCount: "Orta Kavurma",
         shelfLife: "Çok İnce (Toz)",
         numberOfBoxes: 10,
-        video: "",
+        image: kediDiliTiramisuCup,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Çekirdekler toz kıvamında öğütülür",
-          "Fincan başına 7-8 gram kahve ve 50ml su cezveye konur",
-          "İsteğe göre şeker eklenir ve karıştırılır",
-          "Kısık ateşte yavaşça ısıtılır, köpürünce ateşten alınır",
-          "Köpük çökünce tekrar ateşe konur",
-          "30 saniye dinlendirildikten sonra köpüğü ile servis edilir",
-        ],
       },
-      french: {
-        name: "French Press",
-        description: "Yağlı ve dolgun gövdeli, zengin aromaya sahip kahve",
+      tropikalMeyveliCup: {
+        name: "Tropikal Meyveli Cup",
+        description:
+          "Yumuşak dokusu ve ferah tropikal meyve aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Guatemala Antigua",
         sliceCount: "Orta Kavurma",
         shelfLife: "Kaba",
         numberOfBoxes: 10,
-        video: "",
+        image: tropikalMeyveliCup,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "French press ön ısıtma yapılır",
-          "30 gram kahve kaba öğütülür",
-          "500ml 96°C sıcaklıkta su dökülür",
-          "Hafifçe karıştırılır, kapak kapatılır",
-          "4 dakika demlenir",
-          "Piston yavaşça bastırılır ve hemen servis edilir",
-        ],
       },
-      filter: {
-        name: "Filtre Kahve (V60)",
-        description: "Temiz ve dengeli, meyve notaları içeren filtre kahve",
+      cilekliCikolataliCup: {
+        name: "Çilekli Çikolatalı Cup",
+        description:
+          "Kremsi dokusu ve çilek–çikolata uyumuyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Kolombiya Supremo",
         sliceCount: "Açık-Orta Kavurma",
         shelfLife: "Orta",
         numberOfBoxes: 10,
-        video: "",
+        image: cilekliCikolataliCup,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "V60 veya Chemex filtresi sıcak su ile durulanır",
-          "15 gram kahve orta incelikte öğütülür",
-          "30-40ml su ile blooming yapılır (30 saniye bekletilir)",
-          "Spiral hareketlerle toplam 250ml su yavaşça dökülür",
-          "3-4 dakikada damlama tamamlanır",
-          "Temiz ve berrak kahve servis edilir",
-        ],
       },
-      chemex: {
-        name: "Chemex",
+      lotusCup: {
+        name: "Lotus Cup",
         description:
-          "Kalın filtreleme ile son derece temiz ve net fincan profili",
+          "Kremsi dokusu ve karamelize Lotus aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Kolombiya",
         sliceCount: "Açık Kavurma",
         shelfLife: "Orta-Kaba",
         numberOfBoxes: 10,
-        video: "",
+        image: lotusCup,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Chemex filtresi yerleştirilir ve durulanır",
-          "40 gram kahve orta-kaba öğütülür",
-          "50ml su ile blooming yapılır (45 saniye)",
-          "Dairesel hareketlerle 700ml su yavaşça dökülür",
-          "4-5 dakikada demleme tamamlanır",
-          "Son derece temiz kahve servis edilir",
-        ],
       },
-      aeropress: {
-        name: "AeroPress",
-        description: "Hızlı ve pratik, basınçlı demleme yöntemi",
+      antepFistikliDevilsCup: {
+        name: "Antep Fıstıklı Devils Cup",
+        description: "Yoğun kakao–fıstık aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Kenya",
         sliceCount: "Orta Kavurma",
         shelfLife: "İnce-Orta",
         numberOfBoxes: 10,
-        video: "",
+        image: antepFistikliDevilsCup,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "AeroPress ters pozisyonda hazırlanır",
-          "17 gram kahve ince-orta öğütülür",
-          "80°C sıcaklıkta 200ml su eklenir",
-          "30 saniye karıştırılır ve 1 dakika beklenir",
-          "Filtre takılır, çevrilir ve yavaşça bastırılır",
-          "Konsantre kahve sulandırılarak servis edilir",
-        ],
-      },
-      coldBrew: {
-        name: "Cold Brew",
-        description: "Soğuk su ile uzun demleme, yumuşak ve tatlı profil",
-        netWeight: "500g",
-        sliceWeight: "Brezilya",
-        sliceCount: "Orta-Koyu Kavurma",
-        shelfLife: "Kaba",
-        numberOfBoxes: 10,
-        video: "",
-        trendyolLink: trendyolBaseUrl,
-        steps: [
-          "100 gram kahve kaba öğütülür",
-          "1 litre soğuk su ile karıştırılır",
-          "Kapaklı kapta 12-24 saat buzdolabında bekletilir",
-          "Filtre kağıdı ile süzülür",
-          "Konsantre olarak saklanır",
-          "Suyla veya sütle karıştırılarak buzlu servis edilir",
-        ],
       },
     },
   },
