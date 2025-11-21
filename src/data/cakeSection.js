@@ -1,19 +1,26 @@
 const trendyolBaseUrl =
   "https://www.trendyol.com/magaza/kahf-coffee-m-1128809?channelId=1&sst=0&sk=1";
 
+/*=========================== CheeseCake========================= */
 import limonluCheesecake from "@/assets/cakeSection/cheesecake/limonluCheesecake.jpg";
 import frambuazCheesecake from "@/assets/cakeSection/cheesecake/frambuazCheesecake.jpg";
 import lotusCheesecake from "@/assets/cakeSection/cheesecake/lotusCheesecake.jpg";
 import sanSebastianCheesecake from "@/assets/cakeSection/cheesecake/sanSebastianCheesecake.jpg";
 
+/*=========================== Ruya Pastalar========================= */
+import fistikRuyasi from "@/assets/cakeSection/ruyaPastalar/fistikRuyasi.jpg";
+import karaOrmanPasta from "@/assets/cakeSection/ruyaPastalar/karaOrmanPasta.jpg";
+import devils from "@/assets/cakeSection/ruyaPastalar/devils.jpg";
+
 export const cakeCategories = {
+  /*=========================== CheeseCake========================= */
   cheesecake: {
     name: "Cheesecake Çeşitleri",
     items: {
       limonluCheesecake: {
         name: "Limonlu Cheesecake",
         description:
-          "Kremsi dokusu ve ferah limon aromasıyla rafine bir cheesecake.",
+          "Kremsi dokusu ve ferah limon aromasıyla rafine bir cheesecake",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
@@ -37,7 +44,7 @@ export const cakeCategories = {
       lotusCheesecake: {
         name: "Lotus Cheesecake",
         description:
-          "Kremsi dokusu ve karamelize Lotus aromasıyla rafine bir cheesecake.",
+          "Kremsi dokusu ve karamelize Lotus aromasıyla rafine bir cheesecake",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta Kavurma",
@@ -49,7 +56,7 @@ export const cakeCategories = {
       sanSebastianCheesecake: {
         name: "San Sebastian Cheesecake",
         description:
-          "Kremsi dokusu ve hafif karamelize yüzeyiyle rafine bir cheesecake.",
+          "Kremsi dokusu ve hafif karamelize yüzeyiyle rafine bir cheesecake",
         netWeight: "500g",
         sliceWeight: "Amerika",
         sliceCount: "Orta-Koyu Kavurma",
@@ -60,64 +67,46 @@ export const cakeCategories = {
       },
     },
   },
-  espwecresso: {
-    name: "Espresso Bazlı",
+
+  /*=========================== Ruya Pastalar========================= */
+  ruyaPastalar: {
+    name: "Rüya Pastalar",
     items: {
-      espresso: {
-        name: "Espresso",
+      fistikRuyasi: {
+        name: "Fıstık Rüyası",
         description:
-          "Yoğun ve aromalı, çiçeksi notalar içeren premium espresso",
+          "Kremsi dokusu ve yoğun fıstık aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "Etiyopya Yirgacheffe",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: fistikRuyasi,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "18-20 gram taze çekirdek ince öğütülür",
-          "Portafiltre içinde 15kg basınçla tamping yapılır",
-          "93°C sıcaklıkta, 9 bar basınçta ekstraksiyon başlatılır",
-          "25-30 saniyede 25-30ml espresso elde edilir",
-          "Yoğun crema tabakası ile birlikte servis edilir",
-        ],
       },
-      cappuccino: {
-        name: "Cappuccino",
+      karaOrmanPasta: {
+        name: "Kara Orman Pasta",
         description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
+          "Kremsi dokusu ve yoğun vişne-çikolata aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta-Koyu Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: karaOrmanPasta,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır ve köpürtülür",
-          "Espresso üzerine eşit oranda süt ve köpük eklenir",
-          "1:1:1 oranında espresso, süt ve köpük dengesi sağlanır",
-          "İsteğe göre kakao tozu ile servis edilir",
-        ],
       },
-      latte: {
-        name: "Latte",
-        description: "Espresso ve bol sütlü, yumuşak ve kremsi kahve deneyimi",
+      devils: {
+        name: "Devils",
+        description: "Kremsi dokusu ve yoğun kakao aromasıyla rafine bir lezzet",
         netWeight: "500g",
         sliceWeight: "İtalya",
         sliceCount: "Orta Kavurma",
         shelfLife: "İnce",
         numberOfBoxes: 10,
-        video: "",
+        image: devils,
         trendyolLink: trendyolBaseUrl,
-        steps: [
-          "Espresso shot hazırlanır",
-          "Süt 60-65°C'ye kadar ısıtılır",
-          "Espresso üzerine bol miktarda süt eklenir",
-          "Üzerine ince bir köpük tabakası eklenir",
-          "İsteğe göre latte art yapılabilir",
-        ],
+
       },
       americano: {
         name: "Americano",

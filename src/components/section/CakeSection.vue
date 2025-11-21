@@ -288,7 +288,7 @@ const getCurrentCake = () => {
   display: grid;
   grid-template-columns: 45% 55%;
   gap: 50px;
-  margin-top: 0px;
+  margin-top: 50px;
   padding: 40px;
   background: linear-gradient(
     135deg,
@@ -319,8 +319,8 @@ const getCurrentCake = () => {
   position: relative;
   width: 100%;
   height: 100%;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -439,56 +439,38 @@ const getCurrentCake = () => {
 
 /* Satın Al Butonu */
 .finalButton {
-  position: relative;
-  width: 100%;
-  padding: 20px 32px;
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-  background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  margin-top: 15px;
+  height: 50px;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  margin-left: auto;
+  background: linear-gradient(150deg, #d4a574, #b8935f);
+  color: #fff;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(212, 165, 116, 0.3);
+  box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  will-change: transform;
 }
 
 .finalButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(212, 165, 116, 0.5);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5);
 }
 
 .btnText {
   font-size: 18px;
   font-weight: 700;
+  color: white;
   position: relative;
   z-index: 1;
 }
 
-.btnGradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.finalButton:hover .btnGradient {
-  opacity: 1;
-}
-
-/* Responsive Tasarım */
 @media (max-width: 1200px) {
   .cakeDetailSection {
     grid-template-columns: 1fr 1fr;
