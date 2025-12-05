@@ -303,7 +303,8 @@ const getCurrentCake = () => {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 450px;
+  max-height: 500px;
+  max-width: 800px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
@@ -327,8 +328,7 @@ const getCurrentCake = () => {
 .cakeImage {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
   transition: transform 0.7s ease;
 }
 
@@ -466,7 +466,7 @@ const getCurrentCake = () => {
 .btnText {
   font-size: 18px;
   font-weight: 700;
-  color: white;
+  color: #2c1810;
   position: relative;
   z-index: 1;
 }
