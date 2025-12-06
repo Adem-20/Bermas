@@ -539,6 +539,17 @@ body {
 
 /*=========================== Hero Responsive =============================*/
 /* Talet */
+@media screen and (max-width: 1400px) {
+  .descriptionContent {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.animated-text{
+  justify-content: left;
+  text-align: left;
+}
+}
 @media screen and (max-width: 1024px) {
   .titleContent {
     margin-left: 40px;
@@ -1602,6 +1613,7 @@ body {
 .coffeeDetailContainer {
   position: relative;
   z-index: 1;
+  padding: 100px 20px;
 }
 
 .titleWrapper {

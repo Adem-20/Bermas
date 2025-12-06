@@ -49,7 +49,7 @@
               <p><strong>Cumartesi-Pazar:</strong> 10:00-18:00</p>
             </div>
           </div>
-          <a href="https://maps.app.goo.gl/oAdFWNYZ3SyL6tJz7" target="_blank" rel="noopener noreferrer"
+          <a href="https://maps.app.goo.gl/dZrQ9Jo2oh12KfWF9" target="_blank" rel="noopener noreferrer"
             class="cardInfo cardLink">
             <div class="cardInfoIcon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -58,7 +58,7 @@
               </svg>
             </div>
             <div class="cardInfoContent">
-              <h5>Adres</h5>
+              <h5>ADRES</h5>
               <p>
                 Hallaçlar, 3001. Sk. No:22/A, 20050 Denizli Merkezefendi/Denizli
               </p>
@@ -148,14 +148,14 @@
 }
 
 .cardSectionTitle {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: clamp(22px, 3vw, 28px);
   font-weight: 800;
   color: #d4a574;
   text-align: start;
   margin-bottom: 24px;
 }
 
- .leftSection .cardContainer {
+.leftSection .cardContainer {
   display: flex;
   flex-direction: column;
   gap: 16px;

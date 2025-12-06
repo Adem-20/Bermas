@@ -11,6 +11,7 @@ import image from "@/assets/image.png";
 
 const selectedCategory = ref("cheesecake");
 const selectedCake = ref("limonluCheesecake");
+const activeTab = ref("product"); // 'product' veya 'storage'
 const trendyolBaseUrl =
   "https://www.trendyol.com/magaza/kahf-coffee-m-1128809?channelId=1&sst=0&sk=1";
 
@@ -106,7 +107,22 @@ const onHide = () => {
                 <div class="titleUnderline"></div>
               </div>
 
-              <div class="propertiesList">
+              <!-- Tab Buttons -->
+              <div class="tabButtons">
+                <button
+                  @click="activeTab = 'product'"
+                  :class="['tabBtn', { active: activeTab === 'product' }]">
+                  Ürün Bilgileri
+                </button>
+                <button
+                  @click="activeTab = 'storage'"
+                  :class="['tabBtn', { active: activeTab === 'storage' }]">
+                  Depolama & Lojistik
+                </button>
+              </div>
+
+              <!-- Product Info Tab -->
+              <div v-show="activeTab === 'product'" class="propertiesList">
                 <div class="propertyItem">
                   <div class="propertyContent">
                     <span class="propertyLabel">Kategori</span>
@@ -142,12 +158,33 @@ const onHide = () => {
                     }}</span>
                   </div>
                 </div>
+              </div>
+
+              <!-- Storage & Logistics Tab -->
+              <div v-show="activeTab === 'storage'" class="propertiesList">
+                <div class="propertyItem">
+                  <div class="propertyContent">
+                    <span class="propertyLabel">Raf Ömrü (+4°C)</span>
+                    <span class="propertyValue">{{
+                      getCurrentCake().shelfLife
+                    }}</span>
+                  </div>
+                </div>
 
                 <div class="propertyItem">
                   <div class="propertyContent">
-                    <span class="propertyLabel">Raf Ömrü</span>
+                    <span class="propertyLabel">Raf Ömrü (-18°C)</span>
                     <span class="propertyValue">{{
-                      getCurrentCake().shelfLife
+                      getCurrentCake().shelfLifeFrozen
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="propertyItem">
+                  <div class="propertyContent">
+                    <span class="propertyLabel">Çözündürme Süresi</span>
+                    <span class="propertyValue">{{
+                      getCurrentCake().thawingTime
                     }}</span>
                   </div>
                 </div>
@@ -157,6 +194,24 @@ const onHide = () => {
                     <span class="propertyLabel">Koli Adedi</span>
                     <span class="propertyValue">{{
                       getCurrentCake().numberOfBoxes
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="propertyItem">
+                  <div class="propertyContent">
+                    <span class="propertyLabel">Koli Ölçüsü</span>
+                    <span class="propertyValue">{{
+                      getCurrentCake().boxDimensions
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="propertyItem">
+                  <div class="propertyContent">
+                    <span class="propertyLabel">Palet Kapasitesi</span>
+                    <span class="propertyValue">{{
+                      getCurrentCake().palletCapacity
                     }}</span>
                   </div>
                 </div>
@@ -385,10 +440,42 @@ const onHide = () => {
   border-radius: 2px;
 }
 
+.tabButtons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid rgba(212, 165, 116, 0.2);
+}
+
+.tabBtn {
+  flex: 1;
+  padding: 14px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 18px;
+  font-weight: 600;
+  color: #999;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.tabBtn:hover {
+  color: #d4a574;
+}
+
+.tabBtn.active {
+  color: #d4a574;
+  border-bottom-color: #d4a574;
+}
+
 .propertiesList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  min-height: auto;
 }
 
 .propertyItem {
@@ -592,6 +679,11 @@ const onHide = () => {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
+
+  .tabBtn {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -680,6 +772,11 @@ const onHide = () => {
 
   .propertyValue {
     font-size: 16px;
+  }
+
+  .tabBtn {
+    font-size: 13px;
+    padding: 10px 12px;
   }
 
   .finalButton {
