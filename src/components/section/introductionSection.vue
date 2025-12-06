@@ -237,7 +237,7 @@ onMounted(() => {
 @media (max-width: 480px) {
   .videoSection {
     margin: 30px auto;
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .videoTitle {
@@ -249,7 +249,7 @@ onMounted(() => {
   }
 
   .videoWrapper {
-    padding: 15px;
+    padding: 0px;
   }
 
   .videoDecoration {

@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import VueEasyLightbox from "vue-easy-lightbox";
 import espressoFusion from "../../assets/video/coffeeDetailSection/espresso/espressoFusion.mp4";
 import turkishCoffeeFusion from "../../assets/video/coffeeDetailSection/traditional/turkishCoffeeFusion.mp4";
 import filterCoffeeFusion from "../../assets/video/coffeeDetailSection/traditional/filterCoffeeFusion.mp4";
@@ -251,6 +252,23 @@ const handleCoffeeChange = (coffeeKey) => {
 const getCurrentCoffee = () => {
   return coffeeCategories[selectedCategory.value].items[selectedCoffee.value];
 };
+
+// Lightbox için
+const visibleRef = ref(false);
+const indexRef = ref(0);
+
+const showLightbox = () => {
+  const currentCoffee = getCurrentCoffee();
+  // Sadece resim ise lightbox göster (video için lightbox açılmasın)
+  if (!currentCoffee.video.endsWith('.mp4')) {
+    visibleRef.value = true;
+    indexRef.value = 0;
+  }
+};
+
+const onHide = () => {
+  visibleRef.value = false;
+};
 </script>
 
 <template>
@@ -258,9 +276,7 @@ const getCurrentCoffee = () => {
     <div class="coffeeDetailContainer">
       <div class="titleWrapper">
         <h2 class="mainTitle">
-          <span class="titleLine"></span>
           <span class="titleText">Kahve Çeşitleri & Demleme Rehberi</span>
-          <span class="titleLine"></span>
         </h2>
         <p class="subtitle">
           Profesyonel barİsta teknİklerİyle mÜkemmel kahve deneyİmİ
@@ -329,7 +345,7 @@ const getCurrentCoffee = () => {
 
         <div class="contentBottom">
           <div class="coffeeDetailVideo">
-            <div class="videoFrame">
+            <div class="videoFrame" @click="showLightbox" :style="{ cursor: getCurrentCoffee().video.endsWith('.mp4') ? 'default' : 'pointer' }">
               <video
                 v-if="getCurrentCoffee().video.endsWith('.mp4')"
                 :key="selectedCoffee"
@@ -383,6 +399,13 @@ const getCurrentCoffee = () => {
         </div>
       </div>
     </div>
+
+    <VueEasyLightbox
+      :visible="visibleRef"
+      :imgs="[getCurrentCoffee().video]"
+      :index="indexRef"
+      @hide="onHide"
+    />
   </section>
 </template>
 <style scoped>

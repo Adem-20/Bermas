@@ -285,7 +285,7 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 92vh;
   text-align: left;
   animation: slideDown 1s ease-out;
   overflow: hidden;
@@ -697,6 +697,8 @@ body {
   .HeroSubDescription {
     font-size: 16px;
     line-height: 1.4;
+    text-align: left;
+    padding-left: 4px;
   }
 
   .btnContent {
@@ -1249,8 +1251,6 @@ body {
 .sectionHeader {
   text-align: center;
   margin-bottom: 80px;
-  border-top: 3px solid #d4a574;
-  padding-top: 60px;
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -1583,7 +1583,7 @@ body {
 
 .coffeeDetailSection {
   position: relative;
-  padding: 100px 20px;
+  padding: 0px 20px;
   max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
@@ -1598,21 +1598,16 @@ body {
   text-align: center;
   margin-bottom: 70px;
   animation: fadeInUp 0.8s ease-out;
+  position: relative;
 }
 
 .mainTitle {
   display: flex;
   align-items: center;
+  position: relative;
   justify-content: center;
   gap: 30px;
   margin-bottom: 20px;
-}
-
-.titleLine {
-  flex: 1;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4a574, transparent);
-  max-width: 200px;
 }
 
 .titleText {
@@ -1696,6 +1691,10 @@ body {
   border-color: transparent;
   color: #fff;
   box-shadow: 0 8px 30px rgba(212, 165, 116, 0.4);
+}
+.categoryBtn.active .btnText {
+  color: #fff;
+  border-color: transparent;
 }
 
 .categoryBtn.active .btnShine {
@@ -1908,7 +1907,7 @@ body {
 }
 
 .brewingSteps {
-  height: 607px;
+  height: auto;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -2003,6 +2002,16 @@ body {
   padding-top: 6px;
   font-weight: 500;
 }
+.mainTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);
+}
 
 .finalButton {
   height: 50px;
@@ -2047,10 +2056,6 @@ body {
     font-size: 28px;
   }
 
-  .titleLine {
-    max-width: 100px;
-  }
-
   .subtitle {
     font-size: 13px;
   }
@@ -2082,7 +2087,7 @@ body {
   }
 
   .coffeeDesc {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .coffeeInfo {
@@ -2116,8 +2121,9 @@ body {
   }
 
   .finalButton {
-    padding: 16px 36px;
+    padding: 18px 0px;
     font-size: 16px;
+    width: 150px;
   }
 }
 
@@ -2125,11 +2131,6 @@ body {
   .mainTitle {
     flex-direction: column;
     gap: 15px;
-  }
-
-  .titleLine {
-    width: 100%;
-    max-width: 150px;
   }
 
   .titleText {
@@ -2142,17 +2143,55 @@ body {
   }
 
   .coffeeName {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .coffeeDetailVideo {
     height: 300px;
   }
+  .categoryButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
 
   .stepsHeader {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 10px;
+  }
+  .coffeeBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    background: linear-gradient(135deg, #d4a574, #c49a66);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+  }
+  .titleWrapper {
+    margin-bottom: 40px;
+  }
+
+  .coffeeDetailButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .coffeeDetailBtn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+    justify-content: left;
   }
 }
 

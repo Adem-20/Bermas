@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import VueEasyLightbox from "vue-easy-lightbox";
 import { cakeCategories } from "../../data/cakeSection.js";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination } from "swiper/modules";
@@ -28,6 +29,19 @@ const handleCoffeeChange = (cakeKey) => {
 const getCurrentCake = () => {
   return cakeCategories[selectedCategory.value].items[selectedCake.value];
 };
+
+// Lightbox için
+const visibleRef = ref(false);
+const indexRef = ref(0);
+
+const showLightbox = () => {
+  visibleRef.value = true;
+  indexRef.value = 0;
+};
+
+const onHide = () => {
+  visibleRef.value = false;
+};
 </script>
 
 <template>
@@ -45,23 +59,14 @@ const getCurrentCake = () => {
       </div>
 
       <div class="categorySlider">
-        <Swiper
-          :modules="modules"
-          :slides-per-view="3"
-          :space-between="20"
-          :navigation="true"
-          :pagination="{ clickable: true }"
-          :breakpoints="{
+        <Swiper :modules="modules" :slides-per-view="3" :space-between="20" :navigation="true"
+          :pagination="{ clickable: true }" :breakpoints="{
             320: { slidesPerView: 1, spaceBetween: 10 },
             768: { slidesPerView: 2, spaceBetween: 15 },
             1024: { slidesPerView: 3, spaceBetween: 20 },
-          }"
-        >
+          }">
           <SwiperSlide v-for="(category, key) in cakeCategories" :key="key">
-            <button
-              @click="handleCategoryChange(key)"
-              :class="['categoryBtn', { active: selectedCategory === key }]"
-            >
+            <button @click="handleCategoryChange(key)" :class="['categoryBtn', { active: selectedCategory === key }]">
               <span class="btnText">{{ category.name }}</span>
               <span class="btnShine"></span>
             </button>
@@ -70,12 +75,8 @@ const getCurrentCake = () => {
       </div>
 
       <div class="coffeeDetailButtons">
-        <button
-          v-for="(coffee, key) in cakeCategories[selectedCategory].items"
-          :key="key"
-          @click="handleCoffeeChange(key)"
-          :class="['coffeeDetailBtn', { active: selectedCake === key }]"
-        >
+        <button v-for="(coffee, key) in cakeCategories[selectedCategory].items" :key="key"
+          @click="handleCoffeeChange(key)" :class="['coffeeDetailBtn', { active: selectedCake === key }]">
           <span class="pillDot"></span>
           {{ coffee.name }}
         </button>
@@ -92,14 +93,9 @@ const getCurrentCake = () => {
           <p class="coffeeDesc">{{ getCurrentCake().description }}</p>
 
           <div class="cakeDetailSection">
-            <div class="cakeImageWrapper">
+            <div class="cakeImageWrapper" @click="showLightbox" style="cursor: pointer;">
               <div class="imageFrame">
-                <img
-                  :key="selectedCake"
-                  :src="getCurrentCake().image"
-                  :alt="getCurrentCake().name"
-                  class="cakeImage"
-                />
+                <img :key="selectedCake" :src="getCurrentCake().image" :alt="getCurrentCake().name" class="cakeImage" />
                 <div class="imageOverlay"></div>
               </div>
             </div>
@@ -166,12 +162,7 @@ const getCurrentCake = () => {
                 </div>
               </div>
 
-              <a
-                :href="trendyolBaseUrl"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="finalButton"
-              >
+              <a :href="trendyolBaseUrl" target="_blank" rel="noopener noreferrer" class="finalButton">
                 <span class="btnText">Hemen Satın Al</span>
                 <span class="btnGradient"></span>
               </a>
@@ -180,6 +171,8 @@ const getCurrentCake = () => {
         </div>
       </div>
     </div>
+
+    <VueEasyLightbox :visible="visibleRef" :imgs="[getCurrentCake().image]" :index="indexRef" @hide="onHide" />
   </section>
 </template>
 
@@ -201,15 +194,27 @@ const getCurrentCake = () => {
 
 .categorySlider .swiper {
   width: 900px;
+  max-width: 100%;
   height: 200px;
   padding: 10px 50px 60px;
   margin-bottom: 50px;
 }
+
 .ikonImage {
   width: 28px;
   height: 28px;
   filter: brightness(0) invert(12);
 }
+
+.swiper-navigation-icon {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  transform-origin: center;
+  fill: currentColor;
+  pointer-events: none;
+}
+
 .categorySlider .swiper-slide {
   height: auto;
   display: flex;
@@ -247,9 +252,15 @@ const getCurrentCake = () => {
 
 .categorySlider :deep(.swiper-button-next):after,
 .categorySlider :deep(.swiper-button-prev):after {
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: bold;
   line-height: 1;
+}
+
+.categorySlider :deep(.swiper-button-next svg),
+.categorySlider :deep(.swiper-button-prev svg) {
+  width: 50%;
+  height: 50%;
 }
 
 .categorySlider :deep(.swiper-button-next:hover),
@@ -261,7 +272,6 @@ const getCurrentCake = () => {
 .categorySlider :deep(.swiper-pagination) {
   position: static !important;
   margin-top: 20px;
-  padding-top: 10px;
 }
 
 .categorySlider :deep(.swiper-pagination-bullet) {
@@ -290,11 +300,9 @@ const getCurrentCake = () => {
   gap: 50px;
   margin-top: 50px;
   padding: 40px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(212, 165, 116, 0.05) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(212, 165, 116, 0.05) 100%);
   border-radius: 24px;
   align-items: center;
 }
@@ -437,7 +445,6 @@ const getCurrentCake = () => {
   line-height: 1.3;
 }
 
-/* Satın Al Butonu */
 .finalButton {
   height: 50px;
   width: 30%;
@@ -463,10 +470,26 @@ const getCurrentCake = () => {
   box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5);
 }
 
-.btnText {
+.categoryBtn .btnText {
   font-size: 18px;
   font-weight: 700;
   color: #2c1810;
+  position: relative;
+  z-index: 1;
+}
+
+.categoryBtn.active .btnText {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.finalButton .btnText {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
   position: relative;
   z-index: 1;
 }
@@ -485,9 +508,65 @@ const getCurrentCake = () => {
   .cakeImageWrapper {
     min-height: 400px;
   }
+
+  .categorySlider .swiper {
+    width: 750px;
+    height: 180px;
+    padding: 10px 45px 55px;
+  }
+
+  .categorySlider :deep(.swiper-button-next),
+  .categorySlider :deep(.swiper-button-prev) {
+    width: 50px;
+    height: 50px;
+  }
+
+  .categorySlider :deep(.swiper-button-next):after,
+  .categorySlider :deep(.swiper-button-prev):after {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 968px) {
+  .DessertDetailSection {
+    padding: 60px 20px;
+  }
+
+  .categorySlider {
+    margin-bottom: 40px;
+    padding: 15px 0;
+  }
+
+  .categorySlider .swiper {
+    width: 100%;
+    height: 160px;
+    padding: 10px 40px 50px;
+    margin-bottom: 35px;
+  }
+
+  .categorySlider :deep(.swiper-button-next),
+  .categorySlider :deep(.swiper-button-prev) {
+    width: 45px;
+    height: 45px;
+  }
+
+  .categorySlider :deep(.swiper-button-next):after,
+  .categorySlider :deep(.swiper-button-prev):after {
+    font-size: 16px;
+  }
+
+  .categorySlider .categoryBtn {
+    font-size: 16px;
+  }
+
+  .categoryBtn .btnText {
+    font-size: 16px;
+  }
+
+  .categoryBtn.active .btnText {
+    font-size: 16px;
+  }
+
   .cakeDetailSection {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -516,9 +595,66 @@ const getCurrentCake = () => {
 }
 
 @media (max-width: 640px) {
+  .DessertDetailSection {
+    padding: 40px 15px;
+  }
+
+  .titleWrapper {
+    margin-bottom: 40px;
+  }
+
+  .categorySlider {
+    margin-bottom: 30px;
+    padding: 10px 0;
+  }
+
+  .categorySlider .swiper {
+    width: 100%;
+    height: 140px;
+    padding: 10px 35px 45px;
+    margin-bottom: 25px;
+  }
+
+  .categorySlider :deep(.swiper-button-next),
+  .categorySlider :deep(.swiper-button-prev) {
+    width: 35px;
+    height: 35px;
+  }
+
+  .categorySlider :deep(.swiper-button-next):after,
+  .categorySlider :deep(.swiper-button-prev):after {
+    font-size: 14px;
+  }
+
+  .categorySlider :deep(.swiper-button-next) {
+    right: 5px;
+  }
+
+  .categorySlider :deep(.swiper-button-prev) {
+    left: 5px;
+  }
+
+  .categorySlider .categoryBtn {
+    font-size: 14px;
+    padding: 18px 32px;
+  }
+
+  .categoryBtn .btnText {
+    font-size: 14px;
+  }
+
+  .categoryBtn.active .btnText {
+    font-size: 14px;
+  }
+
+  .categorySlider :deep(.swiper-pagination-bullet) {
+    width: 6px;
+    height: 6px;
+  }
+
   .cakeDetailSection {
-    padding: 25px 15px;
-    margin-top: 40px;
+    padding: 0px 15px;
+    margin-top: 0;
   }
 
   .cakeImageWrapper {
@@ -548,10 +684,15 @@ const getCurrentCake = () => {
 
   .finalButton {
     font-size: 16px;
-    padding: 18px 24px;
+    width: 150px;
+    padding: 18px 0px;
   }
 
   .btnText {
+    font-size: 16px;
+  }
+
+  .finalButton .btnText {
     font-size: 16px;
   }
 }

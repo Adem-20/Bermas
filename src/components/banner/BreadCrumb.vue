@@ -50,6 +50,7 @@ const items = computed(() => {
   color: #1b0000;
   text-decoration: none;
   opacity: 0.9;
+  transition: opacity 0.2s ease;
 }
 .breadcrumbs a:hover {
   opacity: 1;
@@ -60,10 +61,24 @@ const items = computed(() => {
   opacity: 0.6;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .breadcrumbs ul {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .breadcrumbs li + li::before {
+    margin: 0 5px 0 2px;
+  }
+}
+
+/* Tablet - Küçük */
 @media (max-width: 768px) {
   .breadcrumbs ul {
     font-size: 12px;
-    gap: 8px;
+    gap: 6px;
+    letter-spacing: 0.5px;
   }
 
   .breadcrumbs li + li::before {
@@ -71,10 +86,36 @@ const items = computed(() => {
   }
 }
 
+/* Mobil */
 @media (max-width: 480px) {
   .breadcrumbs ul {
-    font-size: 11px;
-    gap: 6px;
+    font-size: 10px;
+    gap: 5px;
+    letter-spacing: 0.3px;
+  }
+
+  .breadcrumbs li + li::before {
+    margin: 0 3px 0 1px;
+  }
+}
+
+/* Mobil - Küçük */
+@media (max-width: 375px) {
+  .breadcrumbs ul {
+    font-size: 9px;
+    gap: 4px;
+  }
+}
+
+/* Çok küçük ekranlar */
+@media (max-width: 320px) {
+  .breadcrumbs ul {
+    font-size: 8px;
+    gap: 3px;
+  }
+
+  .breadcrumbs li + li::before {
+    margin: 0 2px 0 1px;
   }
 }
 </style>

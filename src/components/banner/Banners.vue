@@ -69,7 +69,7 @@ import Breadcrumbs from "./BreadCrumb.vue";
 }
 
 .bannerContent {
-  position: relative; 
+  position: relative;
   z-index: 2;
   width: 100%;
   max-width: 1200px;
@@ -79,16 +79,20 @@ import Breadcrumbs from "./BreadCrumb.vue";
   padding: 0 20px;
   transform: translateZ(0);
   will-change: transform;
+  gap: 20px;
 }
 
 .bannerTitle {
   color: #1b0000;
-  font-size: clamp(24px, 4vw, 48px);
+  font-size: 48px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
   line-height: 1.2;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
 }
 
 .onBanner {
@@ -98,69 +102,78 @@ import Breadcrumbs from "./BreadCrumb.vue";
 /* Tablet - Orta ekranlar */
 @media (max-width: 1024px) {
   .banner {
-    height: 280px;
+    height: 240px;
   }
 
   .bannerContent {
-    padding: 0 30px;
+    padding: 0 25px;
+    gap: 15px;
   }
 
   .bannerTitle {
-    font-size: clamp(28px, 3.5vw, 40px);
+    font-size: 36px;
   }
 }
 
 /* Tablet - Küçük ekranlar */
 @media (max-width: 768px) {
   .banner {
-    height: 220px;
+    height: 200px;
     padding: 0 15px;
   }
 
   .bannerContent {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
-    text-align: center;
+    text-align: left;
     padding: 0 15px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .bannerTitle {
-    font-size: clamp(24px, 3vw, 32px);
+    font-size: 24px;
+    flex: 1;
+    text-align: left;
   }
 
   .onBanner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    flex-shrink: 0;
   }
 }
 
 /* Mobil - Orta */
 @media (max-width: 480px) {
   .banner {
-    height: 200px;
+    height: 180px;
     padding: 0 10px;
   }
 
   .bannerContent {
-    gap: 12px;
+    gap: 10px;
     padding: 0 10px;
   }
 
   .bannerTitle {
-    font-size: clamp(20px, 5vw, 26px);
+    font-size: 20px;
     letter-spacing: 0.5px;
+    line-height: 1.2;
   }
 }
 
 /* Mobil - Küçük ekranlar */
 @media (max-width: 375px) {
   .banner {
-    height: 180px;
+    height: 170px;
+  }
+
+  .bannerContent {
+    gap: 8px;
   }
 
   .bannerTitle {
-    font-size: clamp(18px, 5vw, 22px);
+    font-size: 18px;
+    line-height: 1.2;
   }
 }
 
@@ -173,12 +186,13 @@ import Breadcrumbs from "./BreadCrumb.vue";
 
   .bannerContent {
     padding: 0 8px;
-    gap: 10px;
+    gap: 6px;
   }
 
   .bannerTitle {
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.3px;
+    line-height: 1.2;
   }
 }
 </style>
