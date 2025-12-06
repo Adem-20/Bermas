@@ -591,7 +591,16 @@ body {
     height: 90px;
   }
 }
-
+@media screen and (max-width: 992px) {
+  .descriptionContent{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .animated-text{
+    text-align: left;
+  }
+}
 /* Tablet Küçük Ekranlar */
 @media screen and (max-width: 768px) {
   .hero {
@@ -1260,6 +1269,7 @@ body {
   color: #d4a574;
   margin: 0 0 20px 0;
   position: relative;
+  width: 100%;
   display: inline-block;
 }
 
@@ -1271,7 +1281,7 @@ body {
   transform: translateX(-50%);
   width: 80%;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #d4a574, transparent);
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);  
 }
 
 .sectionSubtitle {
@@ -2005,10 +2015,10 @@ body {
 .mainTitle::after {
   content: "";
   position: absolute;
-  bottom: -8px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 80%;
   height: 3px;
   background: linear-gradient(90deg, transparent, #d4a574, transparent);
 }

@@ -53,7 +53,6 @@ onMounted(() => {
       <div class="aboutHeader" data-aos="fade-up">
         <span class="aboutBadge">Bermas Gıda</span>
         <h1 class="aboutTitle">Kalİte ve Lezzet Tutkumuz</h1>
-        <div class="titleDecoration"></div>
       </div>
 
       <div class="aboutContent">
@@ -121,13 +120,8 @@ onMounted(() => {
 
       <div class="statsSection" data-aos="fade-up">
         <div class="statsGrid">
-          <div
-            v-for="(stat, index) in stats"
-            :key="index"
-            class="statCard"
-            :data-aos="'zoom-in'"
-            :data-aos-delay="index * 100"
-          >
+          <div v-for="(stat, index) in stats" :key="index" class="statCard" :data-aos="'zoom-in'"
+            :data-aos-delay="index * 100">
             <div class="statValue">{{ stat.value }}{{ stat.suffix }}</div>
             <div class="statLabel">{{ stat.label }}</div>
           </div>
@@ -139,13 +133,8 @@ onMounted(() => {
         <div class="valuesGrid">
           <div class="valueCard" data-aos="flip-left" data-aos-delay="0">
             <div class="valueIcon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="16 12 12 8 8 12" />
                 <line x1="12" y1="16" x2="12" y2="8" />
@@ -156,13 +145,8 @@ onMounted(() => {
           </div>
           <div class="valueCard" data-aos="flip-left" data-aos-delay="100">
             <div class="valueIcon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
               </svg>
@@ -172,16 +156,10 @@ onMounted(() => {
           </div>
           <div class="valueCard" data-aos="flip-left" data-aos-delay="200">
             <div class="valueIcon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <path
-                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
-                />
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
               </svg>
             </div>
             <h4>YENİLİKÇİLİK</h4>
@@ -189,16 +167,9 @@ onMounted(() => {
           </div>
           <div class="valueCard" data-aos="flip-left" data-aos-delay="300">
             <div class="valueIcon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2z"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2z" />
                 <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4" />
               </svg>
             </div>
@@ -229,11 +200,23 @@ onMounted(() => {
   position: relative;
   overflow: hidden;
 }
-s .aboutContainer {
+
+.aboutContainer {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+.aboutTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);
 }
 
 .aboutHeader {
@@ -264,16 +247,10 @@ s .aboutContainer {
   margin: 20px 0;
   font-size: 42px;
   letter-spacing: 1px;
+  position: relative;
   text-transform: uppercase;
 }
 
-.titleDecoration {
-  width: 120px;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, #d4a574, transparent);
-  margin: 20px auto;
-  border-radius: 2px;
-}
 
 .aboutContent {
   display: grid;
@@ -463,6 +440,7 @@ s .aboutContainer {
   height: 3px;
   background: linear-gradient(90deg, transparent, #d4a574, transparent);
 }
+
 .valuesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -537,6 +515,7 @@ s .aboutContainer {
   letter-spacing: 2px;
   margin-bottom: 30px;
 }
+
 .ctaSection h3::after {
   content: "";
   position: absolute;

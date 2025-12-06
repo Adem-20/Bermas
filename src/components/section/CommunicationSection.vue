@@ -155,10 +155,11 @@
   margin-bottom: 24px;
 }
 
-.cardContainer {
+ .leftSection .cardContainer {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 0;
 }
 
 .cardInfo {
