@@ -5,7 +5,7 @@ const trendyolBaseUrl =
 import limonluCheesecake from "@/assets/cakeSection/cheesecake/limonluCheesecake.jpg";
 import frambuazCheesecake from "@/assets/cakeSection/cheesecake/frambuazCheesecake.jpg";
 import lotusCheesecake from "@/assets/cakeSection/cheesecake/lotusCheesecake.jpg";
-import sanSebastianCheesecake from "@/assets/cakeSection/cheesecake/sanSebastianCheesecake.jpg";
+import sanSebastianCheesecake from "@/assets/cakeSection/cheesecake/sansebastianCheesecake.jpg";
 
 /*=========================== Ruya Pastalar========================= */
 import fistikRuyasi from "@/assets/cakeSection/ruyaPastalar/fistikRuyasi.jpg";
