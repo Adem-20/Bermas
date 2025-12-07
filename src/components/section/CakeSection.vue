@@ -505,7 +505,6 @@ const onHide = () => {
 }
 
 .propertyItem:hover {
-  transform: translateY(2px);
   box-shadow: 0 8px 20px rgba(212, 165, 116, 0.2);
   background: rgba(255, 255, 255, 1);
 }

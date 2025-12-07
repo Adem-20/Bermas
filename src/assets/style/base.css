@@ -544,11 +544,11 @@ body {
     display: flex;
     flex-direction: column;
     width: 50%;
-}
-.animated-text{
-  justify-content: left;
-  text-align: left;
-}
+  }
+  .animated-text {
+    justify-content: left;
+    text-align: left;
+  }
 }
 @media screen and (max-width: 1024px) {
   .titleContent {
@@ -603,12 +603,12 @@ body {
   }
 }
 @media screen and (max-width: 992px) {
-  .descriptionContent{
+  .descriptionContent {
     display: flex;
     flex-direction: column;
     width: 50%;
   }
-  .animated-text{
+  .animated-text {
     text-align: left;
   }
 }
@@ -1292,7 +1292,7 @@ body {
   transform: translateX(-50%);
   width: 80%;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #d4a574, transparent);  
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);
 }
 
 .sectionSubtitle {
@@ -1452,7 +1452,7 @@ body {
 .coffeeBtn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
-  border-color: transparent;
+  border-color: none;
 }
 
 .btnText {
@@ -1604,7 +1604,7 @@ body {
 
 .coffeeDetailSection {
   position: relative;
-  padding: 0px 20px;
+  padding: 100px 20px;
   max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
@@ -1613,7 +1613,7 @@ body {
 .coffeeDetailContainer {
   position: relative;
   z-index: 1;
-  padding: 100px 20px;
+  padding: 0px 0px;
 }
 
 .titleWrapper {
@@ -1650,6 +1650,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.8;
+  margin-top: 30px;
 }
 
 .categoryButtons {
@@ -2152,7 +2153,7 @@ body {
 @media (max-width: 640px) {
   .mainTitle {
     flex-direction: column;
-    gap: 15px;
+    gap: 0px;
   }
 
   .titleText {
@@ -2214,6 +2215,11 @@ body {
     padding: 12px 20px;
     font-size: 14px;
     justify-content: left;
+  }
+  .coffeeDetailContainer {
+    position: relative;
+    z-index: 1;
+    padding: 0px 0px;
   }
 }
 

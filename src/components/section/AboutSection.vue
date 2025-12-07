@@ -529,7 +529,7 @@ onMounted(() => {
 
 .ctaSection p {
   font-size: 1.2rem;
-  color: #1b0000;
+  color: #fff;
   margin-bottom: 30px;
   font-weight: 600;
   position: relative;
