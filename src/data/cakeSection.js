@@ -361,6 +361,8 @@ export const cakeCategories = {
         boxDimensions: "27x79x30 cm",
         palletCapacity: "24 koli",
         numberOfBoxes: 9,
+        image: tiramisuMono,
+
         trendyolLink: trendyolBaseUrl,
       },
       bellaVistaBeyaz: {
