@@ -28,7 +28,7 @@ import coffeBean2 from "../../assets/hero/coffeBean2.png";
       </div>
 
       <div class="titleContent">
-        <h1 class="heroTitle">KAHF COFFE</h1>
+        <h1 class="heroTitle">KAHF COFFEE</h1>
         <h2 class="heroSubtitle">Premium Kahve Tedarikçisi</h2>
         <div class="descriptionContent">
           <p class="heroDescription animated-text">
