@@ -5,8 +5,8 @@ import introVideo from "../../assets/video/introduction/introductionCoffeVideo.m
 
 const stats = ref([
   { value: 0, target: 100, label: "Taze Kahve", suffix: "%" },
-  { value: 0, target: 15, label: "Çeşit Pasta", suffix: "+" },
-  { value: 0, target: 300, label: "Mutlu Müşteri", suffix: "+" },
+  { value: 0, target: 40, label: "Çeşit Pasta", suffix: "+" },
+  { value: 0, target: 500, label: "Mutlu Müşteri", suffix: "+" },
 ]);
 
 const animateValue = (stat, duration = 2000) => {

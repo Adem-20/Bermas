@@ -53,7 +53,7 @@ import lotusCup from "@/assets/cakeSection/cupPastalar/lotusCup.jpg";
 import antepFistikliDevilsCup from "@/assets/cakeSection/cupPastalar/antepFistikliDevilsCup.jpg";
 
 export const cakeCategories = {
-  /*=========================== CheeseCake========================= */
+  /*=========================== CHEESECAKE ========================= */
   cheesecake: {
     name: "Cheesecake Çeşitleri",
     items: {
@@ -124,9 +124,9 @@ export const cakeCategories = {
     },
   },
 
-  /*=========================== Ruya Pastalar========================= */
-  ruyaPastalar: {
-    name: "Rüya Pastalar",
+  /*=========================== DİLİM PASTALAR ========================= */
+  dilimPastalar: {
+    name: "Dilim Pastalar",
     items: {
       fistikRuyasi: {
         name: "Fıstık Rüyası",
@@ -176,13 +176,6 @@ export const cakeCategories = {
         image: devils,
         trendyolLink: trendyolBaseUrl,
       },
-    },
-  },
-
-  /*=========================== Meyveli Pastalar========================= */
-  meyveliPastalar: {
-    name: "Meyveli Pastalar",
-    items: {
       tropikalMeyveliPasta: {
         name: "Tropikal Meyveli Pasta",
         description:
@@ -202,7 +195,7 @@ export const cakeCategories = {
       cocostarPasta: {
         name: "Cocostar Pasta",
         description:
-          "Espresso, süt köpüğü ve sıcak süt ile hazırlanan İtalyan klasiği",
+          "Kremsi dokusu ve yoğun hindistan cevizi aromasıyla rafine bir lezzet",
         netWeight: "1600g",
         sliceWeight: "160g",
         sliceCount: "10",
@@ -213,22 +206,6 @@ export const cakeCategories = {
         palletCapacity: "24 koli",
         numberOfBoxes: 12,
         image: cocostarPasta,
-        trendyolLink: trendyolBaseUrl,
-      },
-      visneliKurabiyeli: {
-        name: "Vişneli Kurabiyeli Pasta",
-        description:
-          "Kremsi dokusu ve yoğun vişne-kurabiye aromasıyla rafine bir lezzet",
-        netWeight: "1600g",
-        sliceWeight: "160g",
-        sliceCount: "10",
-        shelfLife: "4 Gün",
-        shelfLifeFrozen: "1 Yıl",
-        thawingTime: "1-3 saat",
-        boxDimensions: "27x79x30 cm",
-        palletCapacity: "24 koli",
-        numberOfBoxes: 9,
-        image: visneliKurabiyeli,
         trendyolLink: trendyolBaseUrl,
       },
       yabanMersinli: {
@@ -247,13 +224,30 @@ export const cakeCategories = {
         image: yabanMersinli,
         trendyolLink: trendyolBaseUrl,
       },
+      visneliKurabiyeli: {
+        name: "Vişneli Kurabiyeli Pasta",
+        description:
+          "Kremsi dokusu ve yoğun vişne-kurabiye aromasıyla rafine bir lezzet",
+        netWeight: "1600g",
+        sliceWeight: "160g",
+        sliceCount: "10",
+        shelfLife: "4 Gün",
+        shelfLifeFrozen: "1 Yıl",
+        thawingTime: "1-3 saat",
+        boxDimensions: "27x79x30 cm",
+        palletCapacity: "24 koli",
+        numberOfBoxes: 9,
+        image: visneliKurabiyeli,
+        trendyolLink: trendyolBaseUrl,
+      },
     },
   },
 
-  /*=========================== Marlenka Çeşitleri========================= */
-  marlenkaCesitleri: {
-    name: "Marlenka Çeşitleri",
+  /*=========================== MONO PASTALAR ========================= */
+  monoPastalar: {
+    name: "Mono Pastalar",
     items: {
+      // Marlenka’lar
       balliCevizliMarlenka: {
         name: "Ballı Cevizli Marlenka",
         description:
@@ -286,13 +280,8 @@ export const cakeCategories = {
         image: balliAntepliMarlenka,
         trendyolLink: trendyolBaseUrl,
       },
-    },
-  },
 
-  /*=========================== incir/tahinli Pasta========================= */
-  incirTahinliPastalar: {
-    name: "İncir&Tahinli Pastalar",
-    items: {
+      // İncir & Tahinli
       incirCevizli: {
         name: "İncir Cevizli Pasta",
         description:
@@ -325,13 +314,8 @@ export const cakeCategories = {
         image: balliTahinli,
         trendyolLink: trendyolBaseUrl,
       },
-    },
-  },
 
-  /*=========================== Mono Pastalar ========================= */
-  monoPastalar: {
-    name: "Mono Pastalar",
-    items: {
+      // Mono pasta satırları
       latteMonoPasta: {
         name: "Latte Mono Pasta",
         description:
@@ -349,7 +333,7 @@ export const cakeCategories = {
         trendyolLink: trendyolBaseUrl,
       },
       tiramisuMono: {
-        name: "Mono Tiramisu Pasta",
+        name: "Tiramisu Mono",
         description:
           "Kremsi dokusu ve dengeli kahve–mascarpone aromasıyla rafine bir lezzet",
         netWeight: "1350g",
@@ -362,7 +346,6 @@ export const cakeCategories = {
         palletCapacity: "24 koli",
         numberOfBoxes: 9,
         image: tiramisuMono,
-
         trendyolLink: trendyolBaseUrl,
       },
       bellaVistaBeyaz: {
@@ -461,20 +444,15 @@ export const cakeCategories = {
         image: monoFrambuazliCheesecake,
         trendyolLink: trendyolBaseUrl,
       },
-    },
-  },
 
-  /*=========================== Kek/Meyveli Kekler ========================= */
-  kekMeyveliKekler: {
-    name: "Kek&Meyveli Kekler",
-    items: {
+      // Beks kek + Mozaik (görselde alt satırlarda)
       bekskekMeyveli: {
         name: "Beks Kek Meyveli",
         description:
           "Yumuşak dokusu ve doğal meyve aromasıyla rafine bir lezzet",
-        netWeight: "-",
-        sliceWeight: "-",
-        sliceCount: "-",
+        netWeight: "1530g",
+        sliceWeight: "170g",
+        sliceCount: "9",
         shelfLife: "-",
         shelfLifeFrozen: "-",
         thawingTime: "-",
@@ -484,12 +462,114 @@ export const cakeCategories = {
         image: beksKek,
         trendyolLink: trendyolBaseUrl,
       },
+      mozaikPasta: {
+        name: "Mozaik Pasta",
+        description:
+          "Yoğun çikolata dokusu ve bisküvi kırıntılarıyla rafine bir lezzet.",
+        netWeight: "1800g",
+        sliceWeight: "150g",
+        sliceCount: "12",
+        shelfLife: "-",
+        shelfLifeFrozen: "1 Yıl",
+        thawingTime: "1-3 saat",
+        boxDimensions: "27x79x30 cm",
+        palletCapacity: "24 koli",
+        numberOfBoxes: "-",
+        image: mozaikPasta,
+        trendyolLink: trendyolBaseUrl,
+      },
     },
   },
 
-  /*=========================== Cedric Serisi (Özel Ürünler) ========================= */
-  cedricSerisi: {
-    name: "Cedric Serisi (Özel Ürünler)",
+  /*=========================== CUP PASTALAR ========================= */
+  cupPastalar: {
+    name: "Cup Pastalar",
+    items: {
+      lotusCup: {
+        name: "Lotus Cup",
+        description:
+          "Kremsi dokusu ve karamelize Lotus aromasıyla rafine bir lezzet",
+        netWeight: "1440g",
+        sliceWeight: "160g",
+        sliceCount: "9",
+        shelfLife: "4 Gün",
+        shelfLifeFrozen: "1 Yıl",
+        thawingTime: "1-3 saat",
+        boxDimensions: "27x79x30 cm",
+        palletCapacity: "24 koli",
+        numberOfBoxes: "9",
+        image: lotusCup,
+        trendyolLink: trendyolBaseUrl,
+      },
+      antepFistikliDevilsCup: {
+        name: "Antep Fıstıklı Devils Cup",
+        description: "Yoğun kakao–fıstık aromasıyla rafine bir lezzet",
+        netWeight: "1440g",
+        sliceWeight: "160g",
+        sliceCount: "9",
+        shelfLife: "4 Gün",
+        shelfLifeFrozen: "1 Yıl",
+        thawingTime: "1-3 saat",
+        boxDimensions: "27x79x30 cm",
+        palletCapacity: "24 koli",
+        numberOfBoxes: "9",
+        image: antepFistikliDevilsCup,
+        trendyolLink: trendyolBaseUrl,
+      },
+      tropikalMeyveliCup: {
+        name: "Tropikal Meyveli Cup",
+        description:
+          "Yumuşak dokusu ve ferah tropikal meyve aromasıyla rafine bir lezzet",
+        netWeight: "-",
+        sliceWeight: "-",
+        sliceCount: "-",
+        shelfLife: "-",
+        shelfLifeFrozen: "1 Yıl",
+        thawingTime: "1-3 saat",
+        boxDimensions: "27x79x30 cm",
+        palletCapacity: "24 koli",
+        numberOfBoxes: "-",
+        image: tropikalMeyveliCup,
+        trendyolLink: trendyolBaseUrl,
+      },
+      cilekliCikolataliCup: {
+        name: "Çilekli Çikolatalı Cup",
+        description:
+          "Kremsi dokusu ve çilek–çikolata uyumuyla rafine bir lezzet",
+        netWeight: "-",
+        sliceWeight: "-",
+        sliceCount: "-",
+        shelfLife: "-",
+        shelfLifeFrozen: "1 Yıl",
+        thawingTime: "1-3 saat",
+        boxDimensions: "27x79x30 cm",
+        palletCapacity: "24 koli",
+        numberOfBoxes: "-",
+        image: cilekliCikolataliCup,
+        trendyolLink: trendyolBaseUrl,
+      },
+      kediDiliTiramisuCup: {
+        name: "Kedi Dili Tiramisu Cup",
+        description:
+          "Kremsi dokusu ve dengeli kahve–mascarpone aromasıyla rafine bir lezzet",
+        netWeight: "-",
+        sliceWeight: "-",
+        sliceCount: "-",
+        shelfLife: "-",
+        shelfLifeFrozen: "1 Yıl",
+        thawingTime: "1-3 saat",
+        boxDimensions: "27x79x30 cm",
+        palletCapacity: "24 koli",
+        numberOfBoxes: "-",
+        image: kediDiliTiramisuCup,
+        trendyolLink: trendyolBaseUrl,
+      },
+    },
+  },
+
+  /*=========================== CEDRIC PASTALAR ========================= */
+  cedricPastalar: {
+    name: "Cedric Pastalar",
     items: {
       cedricFistikli: {
         name: "Cedric Fıstıklı",
@@ -537,112 +617,34 @@ export const cakeCategories = {
         numberOfBoxes: "-",
         trendyolLink: trendyolBaseUrl,
       },
-    },
-  },
-
-  /*=========================== Mozaik&Ozel Pastalar ========================= */
-  mozaikOzelPastalar: {
-    name: "Mozaik&Özel Pastalar",
-    items: {
-      mozaikPasta: {
-        name: "Mozaik Pasta",
+      cedricMango: {
+        name: "Cedric Mango",
         description:
-          "Yoğun çikolata dokusu ve bisküvi kırıntılarıyla rafine bir lezzet.",
-        netWeight: "1800g",
-        sliceWeight: "150g",
-        sliceCount: "12",
-        shelfLife: "-",
-        shelfLifeFrozen: "1 Yıl",
-        thawingTime: "1-3 saat",
-        boxDimensions: "27x79x30 cm",
-        palletCapacity: "24 koli",
-        numberOfBoxes: "-",
-        image: mozaikPasta,
-        trendyolLink: trendyolBaseUrl,
-      },
-    },
-  },
-  /*=========================== Cup Pastalar ========================= */
-  cupPastalar: {
-    name: "Cup Çeşitleri (Küçük Porsiyonlar)",
-    items: {
-      kediDiliTiramisuCup: {
-        name: "Kedi Dili Tiramisu Cup",
-        description:
-          "Kremsi dokusu ve dengeli kahve–mascarpone aromasıyla rafine bir lezzet",
+          "Kremsi dokusu ve Mango aromasıyla rafine bir lezzet",
         netWeight: "-",
         sliceWeight: "-",
         sliceCount: "-",
         shelfLife: "-",
-        shelfLifeFrozen: "1 Yıl",
-        thawingTime: "1-3 saat",
-        boxDimensions: "27x79x30 cm",
-        palletCapacity: "24 koli",
+        shelfLifeFrozen: "-",
+        thawingTime: "-",
+        boxDimensions: "-",
+        palletCapacity: "-",
         numberOfBoxes: "-",
-        image: kediDiliTiramisuCup,
         trendyolLink: trendyolBaseUrl,
       },
-      tropikalMeyveliCup: {
-        name: "Tropikal Meyveli Cup",
+      cedricCilekli: {
+        name: "Cedric Çilekli",
         description:
-          "Yumuşak dokusu ve ferah tropikal meyve aromasıyla rafine bir lezzet",
+          "Kremsi dokusu ve Çilek aromasıyla rafine bir lezzet",
         netWeight: "-",
         sliceWeight: "-",
         sliceCount: "-",
         shelfLife: "-",
-        shelfLifeFrozen: "1 Yıl",
-        thawingTime: "1-3 saat",
-        boxDimensions: "27x79x30 cm",
-        palletCapacity: "24 koli",
+        shelfLifeFrozen: "-",
+        thawingTime: "-",
+        boxDimensions: "-",
+        palletCapacity: "-",
         numberOfBoxes: "-",
-        image: tropikalMeyveliCup,
-        trendyolLink: trendyolBaseUrl,
-      },
-      cilekliCikolataliCup: {
-        name: "Çilekli Çikolatalı Cup",
-        description:
-          "Kremsi dokusu ve çilek–çikolata uyumuyla rafine bir lezzet",
-        netWeight: "-",
-        sliceWeight: "-",
-        sliceCount: "-",
-        shelfLife: "-",
-        shelfLifeFrozen: "1 Yıl",
-        thawingTime: "1-3 saat",
-        boxDimensions: "27x79x30 cm",
-        palletCapacity: "24 koli",
-        numberOfBoxes: "-",
-        image: cilekliCikolataliCup,
-        trendyolLink: trendyolBaseUrl,
-      },
-      lotusCup: {
-        name: "Lotus Cup",
-        description:
-          "Kremsi dokusu ve karamelize Lotus aromasıyla rafine bir lezzet",
-        netWeight: "1440g",
-        sliceWeight: "160g",
-        sliceCount: "9",
-        shelfLife: "4 Gün",
-        shelfLifeFrozen: "1 Yıl",
-        thawingTime: "1-3 saat",
-        boxDimensions: "27x79x30 cm",
-        palletCapacity: "24 koli",
-        numberOfBoxes: "9",
-        image: lotusCup,
-        trendyolLink: trendyolBaseUrl,
-      },
-      antepFistikliDevilsCup: {
-        name: "Antep Fıstıklı Devils Cup",
-        description: "Yoğun kakao–fıstık aromasıyla rafine bir lezzet",
-        netWeight: "1440g",
-        sliceWeight: "160g",
-        sliceCount: "9",
-        shelfLife: "4 Gün",
-        shelfLifeFrozen: "1 Yıl",
-        thawingTime: "1-3 saat",
-        boxDimensions: "27x79x30 cm",
-        palletCapacity: "24 koli",
-        numberOfBoxes: "9",
-        image: antepFistikliDevilsCup,
         trendyolLink: trendyolBaseUrl,
       },
     },

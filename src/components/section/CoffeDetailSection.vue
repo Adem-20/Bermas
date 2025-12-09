@@ -253,6 +253,34 @@ const getCurrentCoffee = () => {
   return coffeeCategories[selectedCategory.value].items[selectedCoffee.value];
 };
 
+const goToNextCoffee = () => {
+  const items = Object.keys(coffeeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCoffee.value);
+  const nextIndex = (currentIndex + 1) % items.length;
+  selectedCoffee.value = items[nextIndex];
+};
+
+const goToPrevCoffee = () => {
+  const items = Object.keys(coffeeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCoffee.value);
+  const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+  selectedCoffee.value = items[prevIndex];
+};
+
+const getPrevCoffeeName = () => {
+  const items = Object.keys(coffeeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCoffee.value);
+  const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+  return coffeeCategories[selectedCategory.value].items[items[prevIndex]].name;
+};
+
+const getNextCoffeeName = () => {
+  const items = Object.keys(coffeeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCoffee.value);
+  const nextIndex = (currentIndex + 1) % items.length;
+  return coffeeCategories[selectedCategory.value].items[items[nextIndex]].name;
+};
+
 // Lightbox için
 const visibleRef = ref(false);
 const indexRef = ref(0);
@@ -284,24 +312,16 @@ const onHide = () => {
       </div>
 
       <div class="categoryButtons">
-        <button
-          v-for="(category, key) in coffeeCategories"
-          :key="key"
-          @click="handleCategoryChange(key)"
-          :class="['categoryBtn', { active: selectedCategory === key }]"
-        >
+        <button v-for="(category, key) in coffeeCategories" :key="key" @click="handleCategoryChange(key)"
+          :class="['categoryBtn', { active: selectedCategory === key }]">
           <span class="btnText">{{ category.name }}</span>
           <span class="btnShine"></span>
         </button>
       </div>
 
       <div class="coffeeDetailButtons">
-        <button
-          v-for="(coffee, key) in coffeeCategories[selectedCategory].items"
-          :key="key"
-          @click="handleCoffeeChange(key)"
-          :class="['coffeeDetailBtn', { active: selectedCoffee === key }]"
-        >
+        <button v-for="(coffee, key) in coffeeCategories[selectedCategory].items" :key="key"
+          @click="handleCoffeeChange(key)" :class="['coffeeDetailBtn', { active: selectedCoffee === key }]">
           <span class="pillDot"></span>
           {{ coffee.name }}
         </button>
@@ -312,8 +332,7 @@ const onHide = () => {
           <div class="coffeeBadge">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path
-                d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z"
-              />
+                d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
             </svg>
             <span>Premium Quality</span>
           </div>
@@ -345,25 +364,15 @@ const onHide = () => {
 
         <div class="contentBottom">
           <div class="coffeeDetailVideo">
-            <div class="videoFrame" @click="showLightbox" :style="{ cursor: getCurrentCoffee().video.endsWith('.mp4') ? 'default' : 'pointer' }">
-              <video
-                v-if="getCurrentCoffee().video.endsWith('.mp4')"
-                :key="selectedCoffee"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              >
+            <div class="videoFrame" @click="showLightbox"
+              :style="{ cursor: getCurrentCoffee().video.endsWith('.mp4') ? 'default' : 'pointer' }">
+              <video v-if="getCurrentCoffee().video.endsWith('.mp4')" :key="selectedCoffee" autoplay muted loop
+                playsinline preload="metadata">
                 <source :src="getCurrentCoffee().video" type="video/mp4" />
                 Tarayıcınız video etiketini desteklemiyor.
               </video>
 
-              <img
-                v-else
-                :src="getCurrentCoffee().video"
-                :alt="getCurrentCoffee().name"
-              />
+              <img v-else :src="getCurrentCoffee().video" :alt="getCurrentCoffee().name" />
             </div>
             <div class="videoGradient"></div>
           </div>
@@ -377,35 +386,39 @@ const onHide = () => {
             </div>
 
             <div class="stepsList">
-              <div
-                v-for="(step, index) in getCurrentCoffee().steps"
-                :key="index"
-                class="stepItem"
-                :style="{ '--stepIndex': index }"
-              >
+              <div v-for="(step, index) in getCurrentCoffee().steps" :key="index" class="stepItem"
+                :style="{ '--stepIndex': index }">
                 <div class="stepNumber">
                   <span>{{ index + 1 }}</span>
                 </div>
                 <p class="stepText">{{ step }}</p>
               </div>
             </div>
-            <button class="finalButton">
+            <a :href="trendyolBaseUrl" target="_blank" rel="noopener noreferrer" class="finalButton">
               Hemen Satın Al
-              <a :href="trendyolLink" target="_blank" rel="noopener noreferrer">
-              </a>
-              <span class="btnGradient"></span>
-            </button>
+            </a>
+            <div class="navigationButtons">
+              <button @click="goToPrevCoffee" class="navButton prevButton">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span class="cakeName">{{ getPrevCoffeeName() }}</span>
+              </button>
+              <button @click="goToNextCoffee" class="navButton nextButton">
+                <span class="cakeName">{{ getNextCoffeeName() }}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <VueEasyLightbox
-      :visible="visibleRef"
-      :imgs="[getCurrentCoffee().video]"
-      :index="indexRef"
-      @hide="onHide"
-    />
+    <VueEasyLightbox :visible="visibleRef" :imgs="[getCurrentCoffee().video]" :index="indexRef" @hide="onHide" />
   </section>
 </template>
 <style scoped>
@@ -413,5 +426,105 @@ const onHide = () => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.navigationButtons {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #d4a574;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #d4a574;
+  cursor: pointer;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.navButton:hover {
+  background: #d4a574;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+}
+
+.navButton svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.navButton:hover svg {
+  transform: translateX(0);
+}
+
+.prevButton:hover svg {
+  transform: translateX(-3px);
+}
+
+.nextButton:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 968px) {
+  .navigationButtons {
+    gap: 12px;
+  }
+
+  .navButton {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigationButtons {
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+
+  .navButton {
+    font-size: 14px;
+    padding: 8px 10px;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .navButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .navButton:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #d4a574;
+    box-shadow: none;
+  }
+
+  .navButton:active {
+    background: #d4a574;
+    color: white;
+    transform: scale(0.98);
+  }
+
+  .prevButton:hover svg,
+  .nextButton:hover svg {
+    transform: translateX(0);
+  }
 }
 </style>

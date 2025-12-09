@@ -11,7 +11,7 @@ import image from "@/assets/image.png";
 
 const selectedCategory = ref("cheesecake");
 const selectedCake = ref("limonluCheesecake");
-const activeTab = ref("product"); // 'product' veya 'storage'
+const activeTab = ref("product");
 const trendyolBaseUrl =
   "https://www.trendyol.com/magaza/kahf-coffee-m-1128809?channelId=1&sst=0&sk=1";
 
@@ -31,7 +31,34 @@ const getCurrentCake = () => {
   return cakeCategories[selectedCategory.value].items[selectedCake.value];
 };
 
-// Lightbox için
+const goToNextCake = () => {
+  const items = Object.keys(cakeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCake.value);
+  const nextIndex = (currentIndex + 1) % items.length;
+  selectedCake.value = items[nextIndex];
+};
+
+const goToPrevCake = () => {
+  const items = Object.keys(cakeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCake.value);
+  const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+  selectedCake.value = items[prevIndex];
+};
+
+const getPrevCakeName = () => {
+  const items = Object.keys(cakeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCake.value);
+  const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+  return cakeCategories[selectedCategory.value].items[items[prevIndex]].name;
+};
+
+const getNextCakeName = () => {
+  const items = Object.keys(cakeCategories[selectedCategory.value].items);
+  const currentIndex = items.indexOf(selectedCake.value);
+  const nextIndex = (currentIndex + 1) % items.length;
+  return cakeCategories[selectedCategory.value].items[items[nextIndex]].name;
+};
+
 const visibleRef = ref(false);
 const indexRef = ref(0);
 
@@ -107,21 +134,15 @@ const onHide = () => {
                 <div class="titleUnderline"></div>
               </div>
 
-              <!-- Tab Buttons -->
               <div class="tabButtons">
-                <button
-                  @click="activeTab = 'product'"
-                  :class="['tabBtn', { active: activeTab === 'product' }]">
+                <button @click="activeTab = 'product'" :class="['tabBtn', { active: activeTab === 'product' }]">
                   Ürün Bilgileri
                 </button>
-                <button
-                  @click="activeTab = 'storage'"
-                  :class="['tabBtn', { active: activeTab === 'storage' }]">
+                <button @click="activeTab = 'storage'" :class="['tabBtn', { active: activeTab === 'storage' }]">
                   Depolama & Lojistik
                 </button>
               </div>
 
-              <!-- Product Info Tab -->
               <div v-show="activeTab === 'product'" class="propertiesList">
                 <div class="propertyItem">
                   <div class="propertyContent">
@@ -160,7 +181,6 @@ const onHide = () => {
                 </div>
               </div>
 
-              <!-- Storage & Logistics Tab -->
               <div v-show="activeTab === 'storage'" class="propertiesList">
                 <div class="propertyItem">
                   <div class="propertyContent">
@@ -218,9 +238,25 @@ const onHide = () => {
               </div>
 
               <a :href="trendyolBaseUrl" target="_blank" rel="noopener noreferrer" class="finalButton">
-                <span class="btnText">Hemen Satın Al</span>
-                <span class="btnGradient"></span>
+                Hemen Satın Al
               </a>
+
+              <div class="navigationButtons">
+                <button @click="goToPrevCake" class="navButton prevButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                  <span class="cakeName">{{ getPrevCakeName() }}</span>
+                </button>
+                <button @click="goToNextCake" class="navButton nextButton">
+                  <span class="cakeName">{{ getNextCakeName() }}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -531,30 +567,7 @@ const onHide = () => {
   line-height: 1.3;
 }
 
-.finalButton {
-  height: 50px;
-  width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  background: linear-gradient(150deg, #d4a574, #b8935f);
-  color: #fff;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
-  cursor: pointer;
-  will-change: transform;
-}
 
-.finalButton:hover {
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5);
-}
 
 .categoryBtn .btnText {
   font-size: 18px;
@@ -572,12 +585,54 @@ const onHide = () => {
   z-index: 1;
 }
 
-.finalButton .btnText {
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  position: relative;
-  z-index: 1;
+
+.navigationButtons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #d4a574;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #d4a574;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.navButton:hover {
+  background: #d4a574;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+}
+
+.navButton svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.navButton:hover svg {
+  transform: translateX(0);
+}
+
+.prevButton:hover svg {
+  transform: translateX(-3px);
+}
+
+.nextButton:hover svg {
+  transform: translateX(3px);
 }
 
 @media (max-width: 1200px) {
@@ -683,6 +738,15 @@ const onHide = () => {
     font-size: 14px;
     padding: 12px 16px;
   }
+
+  .navigationButtons {
+    gap: 12px;
+  }
+
+  .navButton {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -778,18 +842,42 @@ const onHide = () => {
     padding: 10px 12px;
   }
 
-  .finalButton {
-    font-size: 16px;
-    width: 150px;
-    padding: 18px 0px;
+  .navigationButtons {
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 0px;
+    justify-content: center;
   }
 
-  .btnText {
-    font-size: 16px;
+
+  .navButton {
+    font-size: 14px;
+    padding: 8px 10px;
+    justify-content: space-between;
+    gap: 6px;
   }
 
-  .finalButton .btnText {
-    font-size: 16px;
+  .navButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .navButton:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #d4a574;
+    box-shadow: none;
+  }
+
+  .navButton:active {
+    background: #d4a574;
+    color: white;
+    transform: scale(0.98);
+  }
+
+  .prevButton:hover svg,
+  .nextButton:hover svg {
+    transform: translateX(0);
   }
 }
 </style>
