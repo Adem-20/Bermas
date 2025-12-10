@@ -34,6 +34,7 @@ import Breadcrumbs from "./BreadCrumb.vue";
     opacity: 0;
     transform: translateY(-20px) translateZ(0);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) translateZ(0);
@@ -58,6 +59,7 @@ import Breadcrumbs from "./BreadCrumb.vue";
   -webkit-font-smoothing: antialiased;
   transform-style: preserve-3d;
 }
+
 .banner-ready {
   animation: slideDown 0.35s ease-out forwards;
 }
@@ -99,7 +101,6 @@ import Breadcrumbs from "./BreadCrumb.vue";
   flex-shrink: 0;
 }
 
-/* Tablet - Orta ekranlar */
 @media (max-width: 1024px) {
   .banner {
     height: 240px;
@@ -115,7 +116,6 @@ import Breadcrumbs from "./BreadCrumb.vue";
   }
 }
 
-/* Tablet - Küçük ekranlar */
 @media (max-width: 768px) {
   .banner {
     height: 200px;
@@ -142,15 +142,19 @@ import Breadcrumbs from "./BreadCrumb.vue";
   }
 }
 
-/* Mobil - Orta */
 @media (max-width: 480px) {
   .banner {
-    height: 180px;
+    height: auto;
+    min-height: 180px;
     padding: 0 10px;
   }
 
   .bannerContent {
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
     padding: 0 10px;
   }
 
@@ -158,10 +162,15 @@ import Breadcrumbs from "./BreadCrumb.vue";
     font-size: 20px;
     letter-spacing: 0.5px;
     line-height: 1.2;
+    text-align: left;
+    width: 100%;
+  }
+
+  .onBanner {
+    width: 100%;
   }
 }
 
-/* Mobil - Küçük ekranlar */
 @media (max-width: 375px) {
   .banner {
     height: 170px;
@@ -177,7 +186,6 @@ import Breadcrumbs from "./BreadCrumb.vue";
   }
 }
 
-/* Çok küçük ekranlar */
 @media (max-width: 320px) {
   .banner {
     height: 160px;

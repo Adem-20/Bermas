@@ -46,34 +46,35 @@ const items = computed(() => {
   text-transform: uppercase;
   flex-wrap: wrap;
 }
+
 .breadcrumbs a {
   color: #1b0000;
   text-decoration: none;
   opacity: 0.9;
   transition: opacity 0.2s ease;
 }
+
 .breadcrumbs a:hover {
   opacity: 1;
 }
-.breadcrumbs li + li::before {
+
+.breadcrumbs li+li::before {
   content: ">";
   margin: 0 6px 0 2px;
   opacity: 0.6;
 }
 
-/* Tablet */
 @media (max-width: 1024px) {
   .breadcrumbs ul {
     font-size: 14px;
     gap: 8px;
   }
 
-  .breadcrumbs li + li::before {
+  .breadcrumbs li+li::before {
     margin: 0 5px 0 2px;
   }
 }
 
-/* Tablet - Küçük */
 @media (max-width: 768px) {
   .breadcrumbs ul {
     font-size: 12px;
@@ -81,12 +82,11 @@ const items = computed(() => {
     letter-spacing: 0.5px;
   }
 
-  .breadcrumbs li + li::before {
+  .breadcrumbs li+li::before {
     margin: 0 4px 0 2px;
   }
 }
 
-/* Mobil */
 @media (max-width: 480px) {
   .breadcrumbs ul {
     font-size: 10px;
@@ -94,12 +94,15 @@ const items = computed(() => {
     letter-spacing: 0.3px;
   }
 
-  .breadcrumbs li + li::before {
+  .breadcrumbs li+li::before {
     margin: 0 3px 0 1px;
+  }
+
+  .breadcrumbs ul {
+    flex-wrap: wrap;
   }
 }
 
-/* Mobil - Küçük */
 @media (max-width: 375px) {
   .breadcrumbs ul {
     font-size: 9px;
@@ -107,14 +110,13 @@ const items = computed(() => {
   }
 }
 
-/* Çok küçük ekranlar */
 @media (max-width: 320px) {
   .breadcrumbs ul {
     font-size: 8px;
     gap: 3px;
   }
 
-  .breadcrumbs li + li::before {
+  .breadcrumbs li+li::before {
     margin: 0 2px 0 1px;
   }
 }
