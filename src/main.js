@@ -26,8 +26,8 @@ const routes = [
     meta: { breadcrumb: "KAHVE" }
   },
   {
-    path: "/coffeDetail",
-    name:"coffeDetail",
+    path: "/coffeeDetail",
+    name:"coffeeDetail",
     component: CoffeDetailView,
     meta: { breadcrumb: "KAHVE ÇEŞİTLERİ & DEMLEME REHBERİ" }
   },

@@ -38,7 +38,7 @@ import coffeBrazil from "../../assets/video/coffeSection/coffeBrazil.mp4";
           tutkunlarının favorisi olmuştur.
         </p>
         <button class="coffeeBtn primary">
-          <span class="btnText" @click="$router.push('/coffeDetail')"
+          <span class="btnText" @click="$router.push('/coffeeDetail')"
             >Kahve Çeşitleri ve Detaylar</span
           >
         </button>
@@ -60,7 +60,7 @@ import coffeBrazil from "../../assets/video/coffeSection/coffeBrazil.mp4";
           tüketim hem de espresso harmanları için ideal bir seçimdir.
         </p>
         <button class="coffeeBtn primary">
-          <span class="btnText" @click="$router.push('/coffeDetail')"
+          <span class="btnText" @click="$router.push('/coffeeDetail')"
             >Kahve Çeşitleri ve Detaylar</span
           >
         </button>
