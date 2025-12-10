@@ -5,7 +5,7 @@ import instagramIcon from "../../assets/icons/instagramIcon.svg";
 
 const menuItems = ref([
   { id: 1, name: "Ana Sayfa", path: "/" },
-  { id: 2, name: "Kahve", path: "/coffe" },
+  { id: 2, name: "Kahve", path: "/coffee" },
   { id: 3, name: "Pasta", path: "/cake" },
   { id: 4, name: "Hakkımızda", path: "/about" },
   { id: 5, name: "İletişim", path: "/communation" },
@@ -15,7 +15,7 @@ const menuItems = ref([
 <template>
   <footer class="footer">
     <div class="footerContainer">
-      <h2 class="footerTitle">Kahf coffe. Her Yudum Bir Sanat Eseri...</h2>
+      <h2 class="footerTitle">Kahf coffee. Her Yudum Bir Sanat Eseri...</h2>
 
       <section class="footerContent">
         <div class="footerLeft">

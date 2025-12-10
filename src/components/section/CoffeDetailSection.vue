@@ -287,7 +287,6 @@ const indexRef = ref(0);
 
 const showLightbox = () => {
   const currentCoffee = getCurrentCoffee();
-  // Sadece resim ise lightbox göster (video için lightbox açılmasın)
   if (!currentCoffee.video.endsWith('.mp4')) {
     visibleRef.value = true;
     indexRef.value = 0;
