@@ -20,8 +20,8 @@ const routes = [
     meta: { breadcrumb: "ANASAYFA" }
   },
   {
-    path: "/coffe",
-    name:"coffe",
+    path: "/coffee",
+    name:"coffee",
     component: CoffeView,
     meta: { breadcrumb: "KAHVE" }
   },
